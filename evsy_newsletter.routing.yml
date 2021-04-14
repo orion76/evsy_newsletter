@@ -1,0 +1,8 @@
+
+evsy_newsletter.newsletter_overview_controller_overview:
+  path: '/admin/structure/newsletter'
+  defaults:
+    _controller: '\Drupal\evsy_newsletter\Controller\NewsletterOverviewController::overview'
+    _title: 'Overview'
+  requirements:
+    _permission: 'access content'

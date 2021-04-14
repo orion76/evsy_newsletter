@@ -1,0 +1,5 @@
+name: 'evsy_newsletter'
+type: module
+description: 'Site newsletters'
+core: 8.x
+package: 'evsy'

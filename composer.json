@@ -1,0 +1,13 @@
+{
+    "name": "orion76/evsy_newsletter",
+    "type": "drupal-custom-module",
+    "description": "Evsy Newsletter module",
+    "keywords": [
+    ],
+    "homepage": "https://github.com/orion76/evsy_newsletter",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/orion76/evsy_newsletter/issues",
+        "source": "https://github.com/orion76/evsy_newsletter"
+    }
+}

@@ -1,0 +1,25 @@
+evsy_newsletter.newsletter.config.entity:
+  type: mapping
+  mapping:
+    entity_type:
+      type: string
+      label: 'Entity type'
+    bundle:
+      type: string
+      label: 'Bundle'
+
+
+evsy_newsletter.newsletter.config.entity_insert:
+  type: evsy_newsletter.newsletter.config.entity
+  label: 'Entity insert'
+  
+
+evsy_newsletter.newsletter.config.entity_update:
+  type: evsy_newsletter.newsletter.config.entity
+  label: 'Entity update'
+  
+
+evsy_newsletter.newsletter.config.entity_delete:
+  type: evsy_newsletter.newsletter.config.entity
+  label: 'Entity delete'
+  

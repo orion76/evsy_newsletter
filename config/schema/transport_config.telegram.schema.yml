@@ -1,0 +1,13 @@
+evsy_newsletter.transport.config.telegram:
+  type: mapping
+  mapping:
+    bot_key:
+      type: string
+      label: "Bot key"
+
+evsy_newsletter.transport.advanced_config.telegram:
+  type: mapping
+  mapping:
+    chat_id:
+      type: string
+      label: "Chat ID"

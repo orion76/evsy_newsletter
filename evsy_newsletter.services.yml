@@ -1,0 +1,11 @@
+services:
+  plugin.manager.newsletter_transport_plugin:
+    class: Drupal\evsy_newsletter\Plugin\NewsletterTransportPluginManager
+    parent: default_plugin_manager
+    arguments: ['@entity_type.manager']
+    
+  evsy_newsletter.newsletter_subscriber:
+    class: Drupal\evsy_newsletter\Subscriber\NewsletterSubscriber
+    arguments: ['@entity_type.manager','@token']
+    tags:
+      - { name: event_subscriber }

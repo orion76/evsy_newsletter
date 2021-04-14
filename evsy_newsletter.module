@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains evsy_newsletter.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function evsy_newsletter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the evsy_newsletter module.
+    case 'help.page.evsy_newsletter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

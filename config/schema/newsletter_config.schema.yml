@@ -1,0 +1,24 @@
+evsy_newsletter.newsletter_config.*:
+  type: config_entity
+  label: 'Newsletter config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    event:
+      type: string
+      label: Event
+    transport:
+      type: string
+      label: Transport
+    config:
+      type: evsy_newsletter.newsletter.config.[%parent.event]
+    transport_config:
+      type: evsy_newsletter.transport.advanced_config.[%parent.transport]
+    template:
+      type: text

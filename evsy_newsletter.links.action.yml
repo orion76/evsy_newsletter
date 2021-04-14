@@ -1,0 +1,5 @@
+entity.newsletter_config.add_form:
+  route_name: entity.newsletter_config.add_form
+  title: 'Add Newsletter config'
+  appears_on:
+    - entity.newsletter_config.collection

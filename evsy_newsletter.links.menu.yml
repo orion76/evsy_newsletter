@@ -1,0 +1,23 @@
+evsy_newsletter.newsletter_overview_controller_overview:
+  title: 'Newsletter'
+  route_name: evsy_newsletter.newsletter_overview_controller_overview
+  description: 'Newsletter overview'
+  parent: system.admin_structure
+  weight: 99
+
+
+# Transport config menu items definition
+entity.newsletter_transport_config.collection:
+  title: 'Transport config'
+  route_name: entity.newsletter_transport_config.collection
+  description: 'List Transport config (bundles)'
+  parent: evsy_newsletter.newsletter_overview_controller_overview
+  weight: 99
+
+# Newsletter config menu items definition
+entity.newsletter_config.collection:
+  title: 'Newsletter config'
+  route_name: entity.newsletter_config.collection
+  description: 'List Newsletter config (bundles)'
+  parent: evsy_newsletter.newsletter_overview_controller_overview
+  weight: 99
