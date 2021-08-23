@@ -9,15 +9,20 @@ use Drupal\Core\Config\Entity\ConfigEntityInterface;
  */
 interface NewsletterConfigInterface extends ConfigEntityInterface {
 
-    public function getEvent();
+  /**
+   * @return bool
+   */
+  public function isActive();
 
-    public function getTransport();
+  public function getEvent();
 
-    public function getConfig();
+  public function getTransport();
 
-    public function getTransportConfig();
+  public function getConfig();
 
-    public function getTemplate();
+  public function getTransportConfig();
 
-    public function hasKeys($keys);
+  public function getTemplate();
+
+  public function hasKeys($keys);
 }

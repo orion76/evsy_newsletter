@@ -5,6 +5,9 @@ evsy_newsletter.newsletter_config.*:
     id:
       type: string
       label: 'ID'
+    active:
+      type: boolean 
+      label: 'Active'
     label:
       type: label
       label: 'Label'

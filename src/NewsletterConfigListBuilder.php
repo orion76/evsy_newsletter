@@ -42,6 +42,7 @@ class NewsletterConfigListBuilder extends ConfigEntityListBuilder {
         $header['label'] = $this->t('Newsletter config');
         $header['id'] = $this->t('Machine name');
         $header['event'] = $this->t('Event');
+        $header['active'] = $this->t('Active');
         $header['transport'] = $this->t('Transport');
         return $header + parent::buildHeader();
     }
@@ -58,6 +59,7 @@ class NewsletterConfigListBuilder extends ConfigEntityListBuilder {
         $event = $this->eventManager->createInstance($entity->get('event'));
 
         $row['event'] = $event->getLabel();
+        $row['active'] = $entity->get('active')?$this->t('Active'):$this->t('Not active');
         $row['transport'] = $entity->get('transport');
 
         return $row + parent::buildRow($entity);

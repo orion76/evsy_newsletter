@@ -40,6 +40,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   },
  *   config_export = {
  *     "id",
+ *     "active",
  *     "label",
  *     "event",
  *     "transport",
@@ -51,60 +52,71 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  */
 class NewsletterConfig extends ConfigEntityBase implements NewsletterConfigInterface {
 
-    /**
-     * The Newsletter config ID.
-     *
-     * @var string
-     */
-    protected $id;
+  /**
+   * The Newsletter config ID.
+   *
+   * @var string
+   */
+  protected $id;
 
-    /**
-     * The Newsletter config label.
-     *
-     * @var string
-     */
-    protected $label;
+  /** @var boolean */
+  protected $active;
 
-    protected $event;
+  /**
+   * The Newsletter config label.
+   *
+   * @var string
+   */
+  protected $label;
 
-    protected $transport;
+  protected $event;
 
-    protected $config = [];
+  protected $transport;
 
-    protected $transport_config = [];
+  protected $config = [];
 
-    protected $template = [];
+  protected $transport_config = [];
 
-    public function getEvent() {
-        return $this->event;
+  protected $template = [];
+
+  public function getEvent() {
+    return $this->event;
+  }
+
+  public function getTransport() {
+    return $this->transport;
+  }
+
+  public function getConfig() {
+    return empty($this->config) ? [] : $this->config;
+  }
+
+  public function getTransportConfig() {
+    return empty($this->transport_config) ? [] : $this->transport_config;
+  }
+
+  public function getTemplate() {
+    return $this->template;
+  }
+
+  public function hasKeys($keys) {
+    foreach ($keys as $name => $value) {
+      if (FALSE === $this->compareKey($name, $value)) {
+        return FALSE;
+      }
     }
+    return TRUE;
+  }
 
-    public function getTransport() {
-        return $this->transport;
-    }
+  /**
+   * @return bool
+   */
+  public function isActive() {
+    return (boolean) $this->active;
+  }
 
-    public function getConfig() {
-        return empty($this->config) ? [] : $this->config;
-    }
-
-    public function getTransportConfig() {
-        return empty($this->transport_config) ? [] : $this->transport_config;
-    }
-
-    public function getTemplate() {
-        return $this->template;
-    }
-
-    public function hasKeys($keys) {
-        foreach ($keys as $name => $value) {
-            if (FALSE === $this->compareKey($name, $value)) {
-                return FALSE;
-            }
-        }
-        return TRUE;
-    }
-
-    protected function compareKey($name, $value) {
-        return isset($this->config[$name]) && !empty($value) && $this->config[$name] === $value;
-    }
+  protected function compareKey($name, $value) {
+    return isset($this->config[$name]) && !empty($value) && $this->config[$name] === $value;
+  }
+  
 }

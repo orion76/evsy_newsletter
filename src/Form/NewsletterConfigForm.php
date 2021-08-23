@@ -94,6 +94,13 @@ class NewsletterConfigForm extends EntityForm {
             '#disabled' => !$entity->isNew(),
         ];
 
+      $form['active'] = [
+        '#type' => 'checkbox',
+        '#title' => $this->t('Active'),
+        '#default_value' => $entity->isActive(),
+      ];
+        
+        
         $empty_option = $this->t('-- Select --');
 
         $event_id = $entity->get('event');
